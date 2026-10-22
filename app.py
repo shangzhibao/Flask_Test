@@ -24,8 +24,8 @@ def login():
         if pwd == WEB_PASSWORD:
             # 验证成功，标记登录，permanent=True 代表长期记住（默认31天）
             session["is_logged_in"] = True
-            session.permanent = True
-            return redirect(url_for("index"))
+            #session.permanent = True
+            return redirect(url_for("home"))
         else:
             return render_template("login.html", msg="密码错误，请重新输入！")
     return render_template("login.html", msg="")
@@ -84,4 +84,4 @@ def bmi_result():
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT",5000))
-    app.run(debug= False,host= '0.0.0.0',port = port)
+    app.run(debug= True,host= '0.0.0.0',port = port)

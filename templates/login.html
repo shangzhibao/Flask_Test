@@ -1,6 +1,27 @@
-{% extends 'layout.html' %}
-{% block content %}
-<div style="max-width:400px; margin: 80px auto; border:1px solid #ccc; border-radius:12px; padding:30px;">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Nunito:300,400|Raleway:300,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+    <title>访问验证</title>
+    <style>
+        /* 全屏背景 */
+        body {
+            /* 纯色背景示例，你可以换颜色 background-color: #2cb84f;*/
+            
+            background-image: url("{{ url_for('static', filename='images/qq_avatar.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            
+        }
+    </style>
+</head>
+<body>
+<div style="max-width:400px; margin: 80px auto; border:1px solid #ccc; border-radius:12px; padding:30px; background:#fff;">
     <h2>访问验证</h2>
     {% if msg %}
     <p style="color:red;">{{ msg }}</p>
@@ -13,4 +34,5 @@
         <button type="submit" style="padding:8px 16px; background:#5bbc2e; color:white; border:none; border-radius:8px;">确认进入</button>
     </form>
 </div>
-{% endblock %}
+</body>
+</html>
