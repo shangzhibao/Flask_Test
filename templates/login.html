@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div style="max-width:400px; margin: 80px auto; border:1px solid #ccc; border-radius:12px; padding:30px;">
+    <h2>访问验证</h2>
+    {% if msg %}
+    <p style="color:red;">{{ msg }}</p>
+    {% endif %}
+    <form method="post">
+        <div style="margin:15px 0;">
+            <label>网站访问密码</label>
+            <input type="password" name="password" style="width:100%; padding:8px; margin-top:6px; box-sizing: border-box;">
+        </div>
+        <button type="submit" style="padding:8px 16px; background:#5bbc2e; color:white; border:none; border-radius:8px;">确认进入</button>
+    </form>
+</div>
+{% endblock %}

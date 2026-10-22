@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="container" style="padding-top: 0px;">
+  <form action="" method="get">
+    <h2 style="margin-top:0;">选择影片：</h2>
+    <button type="submit" name="num" value="1" style="border:none; border-radius:8px; padding:8px 16px; font-size:16px; margin-right:10px; background: {{ '#5bbc2e' if num==1 else '#fff' }}; color:{{'#fff' if num==1 else '#000'}};">大圣归来</button>
+    <button type="submit" name="num" value="2" style="border:none; border-radius:8px; padding:8px 16px; font-size:16px; background: {{ '#5bbc2e' if num==2 else '#fff' }}; color:{{'#fff' if num==2 else '#000'}};">熊出没之过年</button>
+  </form>
+  {% if num == 1 %}
+  <video controls style="width:100%;margin-top:0px;">
+    <source src="{{ url_for('static', filename='videos/大圣归来.mp4') }}" type="video/mp4">
+    浏览器不支持视频
+  </video>
+  {% elif num == 2 %}
+  <video controls style="width:100%;margin-top:10px;">
+    <source src="{{ url_for('static', filename='videos/熊出没之过年.mp4') }}" type="video/mp4">
+    浏览器不支持视频
+  </video>
+  {% else %}
+  <p style="margin-top:10px;">没有匹配的视频</p>
+  {% endif %}
+</div>
+{% endblock %}

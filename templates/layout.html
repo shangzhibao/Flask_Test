@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400|Nunito:300,400|Raleway:300,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+    {% if title %}
+    <title>新手练习网页 - {{ title}}</title>
+    {% else %}
+    <title>新手练习网页</title>
+    {% endif %}
+  </head>
+
+  <body>
+    <header>
+      <div class="menu-container">
+        <div>
+          <a class="brand-name nav-link" href="/">新手练习网页</a>
+        </div>
+        <ul class="nav-lists">
+          <li class="nav-list">
+            <a class="nav-link active" href="{{ url_for('home') }}">主页</a>
+          </li>
+          <li class="nav-list">
+            <a class="nav-link active" href="{{ url_for('about') }}">关于</a>
+          </li>
+          <li class="nav-list">
+            <a class="nav-link active" href="{{ url_for('post') }}">电影</a>
+          </li>
+          <li class="nav-list">
+            <a class="nav-link active" href="{{ url_for('bmi_page') }}">BMI计算</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      {% block content %} {% endblock %}
+    </main>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="container">
+  <h1>BMI计算器</h1>
+
+  <!-- 表单：提交到 /bmi_result 路由，POST方式 -->
+  <form action="/bmi_result" method="POST">
+    <div style="margin:10px 0;">
+      <input type="number" step="0.01" name="height" placeholder="输入身高（米，例如：1.75）" required>
+    </div>
+    <div style="margin:10px 0;">
+      <input type="number" step="0.1" name="weight" placeholder="输入体重（kg）" required>
+    </div>
+    <div>
+      <button type="submit">计算BMI</button>
+    </div>
+  </form>
+
+  <!-- 如果后端传了bmi变量，就显示结果 -->
+  {% if bmi %}
+  <div style="margin-top:20px; padding:15px; background:#fff;">
+    <h3>计算结果</h3>
+    <p>你的BMI：{{ bmi }}</p>
+    <p>评价：{{ info }}</p>
+  </div>
+  {% endif %}
+
+</div>
+{% endblock %}

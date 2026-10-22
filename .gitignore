@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.DS_Store
+.vscode/
+
+# 视频（核心！不要上传mp4到github）
+*.mp4
+*.mov
+*.avi
+*.mkv
+# 图片大文件按需选择，你这里jpg头像可以保留，所以不写
+# *.jpg
+
+
